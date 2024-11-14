@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linkedin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(gray,skyblue,green);
+      color: #ddd;
+    }
+    
+    header {
+        background-color: #2b2b2b;
+      color: white;
+padding: 10px 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    footer{
+background-color: #2b2b2b;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      width: 100%;
+      bottom: 0;
+    }
+    section {
+      padding: 20px;
+margin-top: 20px;
+      background-size: cover;
+    }
+    #home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+background-color: #222;
+      background-size: cover;
+    }
+    
+    #home img {
+      width: 1600px;
+      height: 680px;
+      border-radius: 10px;
+    }
+#profile {
+      background-image: url('https://images.unsplash.com/photo-1542744095-b5970629ffab');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    
+    #profile h2 {
+      font-size: 2.5rem;
+margin-bottom: 20px;
+    }
+
+    .resume {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
+
+    .resume .person {
+        background-color: #2b2b2b;
+      padding: 20px;
+border-radius: 10px;
+    width: 250px;
+    text-align: center;
+  }
+
+.resume img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+  }
+#feedback {
+      background-color: #222;
+      padding: 40px 20px;
+      text-align: center;
+    }
+ 
+    #feedback h1{
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+ 
+    .feedback-list {
+      display: flex;
+        flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .feedback-item {
+      background-color: #333;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+      text-align: center;
+    }
+
+    .feedback-item p {
+      font-style: italic;
+    }
+
+    .feedback-item .name {
+      font-weight: bold;
+      margin-top: 10px;
+font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  nav {
+    height: 10vh;
+    width: 100%;
+    background-color: #2b2b2b;
+display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      color: white;
+    }
+    #img {
+      display: flex;
+      align-items: center;
+    }
+#img img{
+    height: 40px;
+    margin-right: 10px;
+    background-color: white;
+  }
+  #sear{
+    display: flex;
+    align-items: center;
+    /* border: 2px solid red; */
+    background-color: white;
+    padding-left: 5px;
+    border-radius: 12px;
+  }
+   #sear i{
+    color: black;
+   }
+  #sear input{
+    height: 40px;
+width: 300px;
+      border: none;
+      border-radius: 12px;
+      padding-left: 10px;
+      color: black;
+      outline: none;
+    }
+    #icons {
+      display: flex;
+      align-items: center;
+      border-radius: 40px;
+    }
+    #icons a {
+      text-decoration: none;
+      font-size: 16px;
+      color: white;
+      margin: 0 15px;
+      display: flex;
+      align-items: center;
+    }
+    #icons i {
+font-size: 24px;
+    margin-right: 5px;
+  }
+  .container {
+    display: flex;
+    margin: 20px;
+  }
+  .sidebar {
+    width: 250px;
+    background-color: #2b2b2b;
+    color: white;
+    padding: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      margin-right: 20px;
+      border-radius: 30px;
+    }
+    .main-content {
+      flex: 1;
+      background-color: #2b2b2b;
+      color: white;
+padding: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+    }
+    .profile-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .profile-section img{
+    width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .profile-section .name-location {
+      font-size: 14px;
+    }
+    .update-profile {
+        background-color: #2b2b2b;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+  .update-profile a{
+    text-decoration: none;
+    color: white;
+  }
+  .post-options {
+    display: flex;
+justify-content: space-around;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .post-options div {
+    text-align: center;
+    color: #0073b1;
+    cursor: pointer;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .news-section {
+    background-color: #2b2b2b;
+    color: white;
+      padding: 5px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    footer {
+        background-color: #2b2b2b;
+      color: white;
+      text-align: center;
+      padding: 20px;
+margin-top: 20px;
+      border-radius: 20px;
+    }
+    footer a {
+      color: #0073b1;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+footer .social-icons {
+    margin-top: 10px;
+  }
+footer .social-icons i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: white;
+    cursor: pointer;
+  }
+footer .social-icons i:hover{
+color: #0073b1;
+    }
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div id="img">
+      <img src="https://cdn-icons-png.flaticon.com/128/3536/3536569.png" alt="LinkedIn Logo">
+      <div id="sear">
+        <i class="fa-solid fa-magnifying-glass"></i><br>
+        <input type="Search" placeholder="Search">
+      </div>
+    </div>
+<div id="icons">
+      <a href="#"><i class="fa-solid fa-user-gear"></i>My Network</a>
+      <a href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
+      <a href="#"><i class="fa-solid fa-comment-dots"></i>Messaging</a>
+      <a href="#"><i class="fa-solid fa-bell"></i>Notifications</a>
+      <a href="#"><i class="fa-solid fa-circle-user"></i>Me</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="sidebar">
+<div class="profile-section">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHhYyhYnLv7a1Bw2BdjzZ-3f2R5koeOEXw6A&s" alt="Profile Picture">
+    <div class="name-location">
+      <strong>NMJJG</strong><br>
+      Nippani,Belgaum, Karnataka
+    </div>
+  </div>
+<div class="update-profile"><a href="./login.html">Login To Website</a></div>
+      <ul>
+        <li>Contacts</li>
+        <li>Saved Items</li>
+        <li>Groups & Events</li>
+        <li>Skills</li>
+      </ul>
+    </div>
+    <div class="main-content">
+<div class="header">
+        <h2>Get set up on Jobieeee.in</h2>
+        <p>Add more to your work experiences and education.</p>
+      </div>
+      <div class="post-options">
+        <div>Media</div>
+        <div>Event</div>
+        <div>Write article
+      </div><br>
+     <div class="news-section">
+        <h3>Jobieeee.in News</h3><br>
+        <ul>
+          <li>Greener path</li><br>
+          <li>India Smartphone Market</li><br>
+          <li>NMJJG funding</li><br>
+        </ul>
+      </div>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <header>
+    <h1>Jobieeee</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#profile">Profile</a>
+      <a href="#feedback">Feedback</a>
+    </nav>
+</header>
+  <section id="home">
+    <img src="https://media.istockphoto.com/id/2094337676/photo/diverse-team-working-together-in-modern-co-working-space.jpg?s=2048x2048&w=is&k=20&c=laH1UL7RxM9mqD9TSOYbAFbHBO3RokKTz3O1arUJ0_0=" alt="Main Image" />
+  </section>
+  <section id="profile">
+    <h2>Meet the People</h2>
+    <div class="resume">
+      <div class="person">
+        <img src="https://img.freepik.com/premium-vector/young-man-with-reusable-string-bag-semi-flat-color-vector-character-full-body-person-white-shopping-grocery-store-isolated-modern-cartoon-style-illustration-graphic-design-animation_151150-6670.jpg"
+          alt="Person 1" />
+        <h3>N K</h3>
+        <p>Software Developer</p>
+<p>Location: Karnataka, India</p>
+      </div>
+      <div class="person">
+        <img src="https://thumbs.dreamstime.com/b/cheerful-student-carries-large-stack-books-walking-home-school-young-curly-hair-happily-walks-balancing-heavy-342000206.jpg">
+        <h3>M B</h3>
+        <p>Web Designer</p>
+        <p>Location: Maharastra, India</p>
+</div>
+      <div class="person">
+        <img src="https://c8.alamy.com/comp/FEF6M3/business-man-start-stepping-up-on-stairs-to-success-of-bussiness-FEF6M3.jpg" alt="Person 3">
+        <h3>J B</h3>
+        <p>Product Manager</p>
+        <p>Location: Hydrabad, India</p>
+      </div>
+    </div>
+  </section>
+  <section id="feedback">
+       <h1> People Feedback About Us</h1>
+    <div class="feedback-list">
+      <div class="feedback-item">
+        "Fantastic platform that helped me get a job"
+        <p class="name">G P</p>
+      </div>
+      <div class="feedback-item">
+<p>"A gamechanger for networking"</p>
+        <p class="name">J B</p>
+      </div>
+      <div class="feedback-item">
+        <p>"So easy to use and connect with professionals."</p>
+        <p class="name">J M</p>
+      </div>
+<div class="feedback-item">
+        <p> Fantastic experience Found my dream job</p>
+        <p class="name">N K</p>
+      </div>
+      <div class="feedback-item">
+        <p> Loved the clean design and userfriendly interface.</p>
+        <p class="name">M B</p>
+</div>
+      <div class="feedback-item">
+        <p>&quot;Highly recommend it to anyone looking to build their career.&quot;</p>
+        <p class="name">NMJJG</p>
+      </div>
+      <div class="feedback-item">
+        <p>&quot;Great platform for making meaningful connections.&quot;</p>
+<p class="name">NMJJG</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p> JobieeeeIn.</p>
+    <p>Created by: NMJJG | DESIGNED BY OUR TEAM</p>
+  </footer>
+
+</body>
+</html>
